@@ -1,0 +1,185 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+header {
+    background-color: #252526;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.mdibl-logo {
+    margin-right: 10px;
+}
+
+.anthropic-logo {
+    margin-left: 10px;
+    filter: invert(1);
+}
+
+.x {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0 10px;
+    color: #61dafb;
+}
+
+.main-container {
+    display: flex;
+    flex-grow: 1;
+    padding: 1rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.code-container, .output-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#code-input, #refactored-code {
+    flex-grow: 1;
+    background-color: #2d2d2d;
+    border: 1px solid #3e3e42;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #d4d4d4;
+    overflow-y: auto;
+}
+
+#code-input {
+    resize: none;
+}
+
+#refactored-code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#refactored-code pre {
+    margin: 0;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    border-radius: 4px;
+    position: relative;
+}
+
+#refactored-code code {
+    font-family: 'Courier New', monospace;
+}
+
+footer {
+    background-color: #252526;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+#language-select, #modification-type {
+    padding: 0.5rem;
+    font-size: 16px;
+    background-color: #3c3c3c;
+    color: #d4d4d4;
+    border: 1px solid #3e3e42;
+    border-radius: 4px;
+}
+
+#refactor-button {
+    padding: 0.5rem 1rem;
+    background-color: #0e639c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#refactor-button:hover {
+    background-color: #1177bb;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    height: 30px;
+}
+
+.loading::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 4px solid #61dafb;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    will-change: transform;
+}
+
+.loading.active::after {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.code-block {
+    position: relative;
+}
+
+.copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.copy-button:hover {
+    background-color: #45a049;
+}

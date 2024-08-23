@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDIBL x Anthropic Code Refactoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.16/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/r.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/groovy.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://mdibl.org/wp-content/uploads/2023/02/MDIBL-icon@2x.png" alt="MDIBL Logo" class="logo mdibl-logo">
+            <span class="x">x</span>
+            <img src="https://www.anthropic.com/images/icons/safari-pinned-tab.svg" alt="Anthropic Logo" class="logo anthropic-logo">
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="code-container">
+            <textarea id="code-input" placeholder="Paste your code here..."></textarea>
+        </div>
+        <div class="output-container">
+            <div id="refactored-code"></div>
+        </div>
+    </div>
+    <footer>
+        <div id="loading" class="loading"></div>
+        <div class="input-area">
+            <select id="language-select">
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="java">Java</option>
+                <option value="cpp">C++</option>
+                <option value="csharp">C#</option>
+                <option value="r">R</option>
+                <option value="nextflow">Nextflow</option>
+                <option value="shell">Shell</option>
+                <option value="perl one-liner">Perl 1-liner</option>
+
+            </select>
+            <select id="modification-type">
+                <option value="lint-improve">Lint and Improve Only</option>
+                <option value="abstract">Abstract into Run and Config Files</option>
+                <option value="pseudo-to-code">Convert Pseudocode to Real Code</option>
+            </select>
+            <button id="refactor-button">Submit</button>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
